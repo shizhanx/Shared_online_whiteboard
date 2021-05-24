@@ -725,7 +725,7 @@ public class UI extends JFrame implements IRemoteDraw {
      * @param drawings a list of shapes to be put into the whiteboard.
      */
     @Override
-    public void updateWhiteBoard(LinkedList<MyShape> drawings) throws RemoteException {
+    public synchronized void updateWhiteBoard(LinkedList<MyShape> drawings) throws RemoteException {
         whiteBoard.drawings = drawings;
         whiteBoard.repaint();
         if (admin) {
@@ -747,7 +747,7 @@ public class UI extends JFrame implements IRemoteDraw {
      * @param s the new message list.
      */
     @Override
-    public void updateChatBox(String s) throws RemoteException {
+    public synchronized void updateChatBox(String s) throws RemoteException {
         chatBox.setText(s);
         if (admin) {
             for (String peer: peers.keySet()) {
