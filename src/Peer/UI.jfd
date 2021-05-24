@@ -1,0 +1,259 @@
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.CardLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"resizable": false
+			"title": "Whiteboard"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "400, 400"
+				"$rowSpecs": "50, 50, 150, 100, 80"
+				"$alignTop": true
+				"$alignLeft": true
+			} ) {
+				name: "introPanel"
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField3"
+					"editable": false
+					"text": "Welcome to the GUI of"
+					"horizontalAlignment": 0
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"vAlign": 3
+					"gridwidth": 2
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField4"
+					"editable": false
+					"text": "the ONE and the ONLY"
+					"horizontalAlignment": 0
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"gridwidth": 2
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "initialTitle"
+					"editable": false
+					"font": new java.awt.Font( "Footlight MT Light", 1, 40 )
+					"text": "ONLINE WHITEBOARD"
+					"horizontalAlignment": 0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 2
+					"gridwidth": 2
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "createButton"
+					"text": "Create"
+					"preferredSize": new java.awt.Dimension( 200, 30 )
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 20, true )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "createButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 3
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "joinButton"
+					"text": "Join"
+					"preferredSize": new java.awt.Dimension( 200, 30 )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "joinButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 3
+					"gridx": 1
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "mySignature"
+					"editable": false
+					"text": "Shizhan Xu, 771900, All rights reserved"
+					"horizontalAlignment": 11
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 4
+					"gridwidth": 2
+					"vAlign": 3
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "introPanel"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "85, 85, 465, 165"
+				"$rowSpecs": "30, 50, 300, 50, 0"
+				"$alignTop": true
+				"$alignLeft": true
+			} ) {
+				name: "whiteBoardPanel"
+				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+					name: "menuBar1"
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "fileMenu"
+						"text": "File menu"
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItemNew"
+							"text": "new"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemNewActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItemOpen"
+							"text": "open"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemOpenActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItemSave"
+							"text": "save"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemSaveActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItemSaveAs"
+							"text": "save as"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemSaveAsActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItemClose"
+							"text": "close"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemCloseActionPerformed", true ) )
+						} )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridwidth": 2
+				} )
+				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+					name: "shapeMenu"
+					add( new FormComponent( "javax.swing.JRadioButtonMenuItem" ) {
+						name: "rectShapeButton"
+						"text": "Rectangle"
+						"$buttonGroup": new FormReference( "shapeChoices" )
+						"selected": true
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "shapeButtonItemStateChanged", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JRadioButtonMenuItem" ) {
+						name: "circleShapeButton"
+						"text": "Circle"
+						"$buttonGroup": new FormReference( "shapeChoices" )
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "shapeButtonItemStateChanged", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JRadioButtonMenuItem" ) {
+						name: "ovalShapeButton"
+						"text": "Oval"
+						"$buttonGroup": new FormReference( "shapeChoices" )
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "shapeButtonItemStateChanged", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JRadioButtonMenuItem" ) {
+						name: "lineShapeButton"
+						"text": "Line"
+						"$buttonGroup": new FormReference( "shapeChoices" )
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "shapeButtonItemStateChanged", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JRadioButtonMenuItem" ) {
+						name: "textShapeButton"
+						"text": "Text"
+						"$buttonGroup": new FormReference( "shapeChoices" )
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "shapeButtonItemStateChanged", true ) )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 2
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "colourChoiceButton"
+					"text": "Choose your colour here"
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"background": new java.awt.Color( 0, 0, 0, 255 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "colourChoiceButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 3
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "chatBoxTitle"
+					"text": "Chat box"
+					"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					"editable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"gridwidth": 2
+				} )
+				add( new FormComponent( "Peer.WhiteBoard" ) {
+					name: "whiteBoard"
+					"minimumSize": new java.awt.Dimension( 400, 400 )
+					"maximumSize": new java.awt.Dimension( 400, 400 )
+					"preferredSize": new java.awt.Dimension( 400, 400 )
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "whiteBoardMouseReleased", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "whiteBoardMousePressed", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseMotionListener", "mouseDragged", "whiteBoardMouseDragged", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"gridx": 2
+					"gridheight": 3
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "clientListText"
+					"text": "Client List"
+					"font": #Font0
+					"editable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"gridx": 3
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "chatBoxPane"
+					"horizontalScrollBarPolicy": 31
+					"viewportBorder": new javax.swing.border.BevelBorder( 1, null, null, null, null )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "chatBox"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+						"lineWrap": true
+						"editable": false
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 2
+					"gridwidth": 2
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "clientListPane"
+					"preferredSize": new java.awt.Dimension( 69, 200 )
+					add( new FormComponent( "javax.swing.JList" ) {
+						name: "clientList"
+						"font": new java.awt.Font( "Arial", 1, 22 )
+						"selectionMode": 0
+						"model": new javax.swing.DefaultListModel {
+							addElement( "sb#1234" )
+						}
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 2
+					"gridx": 3
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "chatInputField"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+					"text": "Input your message here"
+					"toolTipText": "Enter to send"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "chatInputFieldActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 3
+					"gridwidth": 2
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "kickButton"
+					"text": "Kick! "
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "kickButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 3
+					"gridx": 3
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "whiteBoardPanel"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 115, 0 )
+			"size": new java.awt.Dimension( 830, 475 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "shapeChoices"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 150, 601 )
+		} )
+	}
+}

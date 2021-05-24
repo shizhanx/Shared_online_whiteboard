@@ -1,0 +1,19 @@
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			"maximumSize": new java.awt.Dimension( 400, 400 )
+			"minimumSize": new java.awt.Dimension( 400, 400 )
+			"preferredSize": new java.awt.Dimension( 400, 400 )
+			"background": sfield java.awt.Color white
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
